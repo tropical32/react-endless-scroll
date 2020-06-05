@@ -7,6 +7,7 @@
 https://dydokamil.github.io/react-endless-scroll-demo/
 
 # Usage
+    import EndlessScroll from 'react-endless-scroll'
 
     <EndlessScroll
       onReachBottom={fetch}
