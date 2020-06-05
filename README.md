@@ -46,7 +46,7 @@ Components to render
 
 ##### `threshold: number = 0.8`
 
-Components to render
+Determines, in percent, how much of the component has to be "seen" in order to trigger `onReachBottom`
 
 ---
 
