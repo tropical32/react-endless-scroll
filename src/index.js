@@ -53,7 +53,6 @@ export function EndlessScroll({
           style={{
             bottom: "0px",
             height: "100px",
-            opacity: "50%",
             position: "absolute",
             width: "100vw",
           }}
