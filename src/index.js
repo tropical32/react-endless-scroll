@@ -50,7 +50,6 @@ export function EndlessScroll({
           ref={container}
           className={bottomWrapperClassName}
           style={{
-            background:'gray',
             bottom: "0px",
             height: "100px",
             left: 0,
