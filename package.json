@@ -1,6 +1,6 @@
 {
   "name": "react-endless-scroll",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An infinite scroll component for React",
   "main": "dist/index.js",
   "scripts": {
