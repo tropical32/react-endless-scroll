@@ -45,7 +45,7 @@ Components to render
 
 ---
 
-##### `threshold: number = 0.8`
+##### `threshold: number = 0.2`
 
 Determines, in percent, how much of the bottom 100 pixels of the list has to be "seen" in order to trigger `onReachBottom`
 
