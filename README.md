@@ -51,18 +51,18 @@ Determines, in percent, how much of the bottom 100 pixels of the list has to be 
 
 ---
 
-##### `topWrapperClassName: string = "endless-scroll-top-wrapper"`
+##### `wrapperClassName: string = "endless-scroll-wrapper"`
 
 class name of the top level wrapper
 
 ---
 
-##### `middleWrapperClassName: string = "endless-scroll-middle-wrapper"`
+##### `loaderWrapperClassName: string = "endless-scroll-loader-wrapper"`
 
 class name of the second level wrapper
 
 ---
 
-##### `bottomWrapperClassName: string = "endless-scroll-bottom-wrapper"`
+##### `loaderClassName: string = "endless-scroll-loader"`
 
 class name of the third level wrapper

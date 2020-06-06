@@ -1,54 +1,47 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 export function EndlessScroll({
-  onReachBottom = () => {},
+  onReachBottom = () => { },
   isLoading = false,
   hasMore = false,
   children = null,
   threshold = 0.2,
-  topWrapperClassName = "endless-scroll-top-wrapper",
-  middleWrapperClassName = "endless-scroll-middle-wrapper",
-  bottomWrapperClassName = "endless-scroll-bottom-wrapper",
+  wrapperClassName = "endless-scroll-wrapper",
+  loaderWrapperClassName = "endless-scroll-loader-wrapper",
+  loaderClassName = "endless-scroll-loader",
 }) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const container = useRef();
+  const loader = useRef(null);
 
   useEffect(() => {
-    const options = {
-      threshold: [threshold],
-    };
-
-    const callback = (entries) => {
+    const loadMore = (entries) => {
       const [first] = entries;
 
-      setIsIntersecting(first.isIntersecting);
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-    const containerCurrent = container.current;
-
-    observer.observe(containerCurrent);
-
-    return () => observer.unobserve(containerCurrent);
-  }, [threshold]);
-
-  useEffect(() => {
-    if (!isLoading && hasMore && isIntersecting) {
-      onReachBottom();
+      if (!isLoading && hasMore && first.isIntersecting) {
+        onReachBottom();
+      }
     }
-    // eslint-disable-next-line
-  }, [hasMore, isLoading, isIntersecting]);
+
+    const options = { threshold: [threshold] };
+    const observer = new IntersectionObserver(loadMore, options);
+
+    const loaderCurrent = loader.current;
+    if (loaderCurrent) {
+      observer.observe(loaderCurrent);
+    }
+
+    return () => observer.unobserve(loaderCurrent);
+  }, [hasMore, isLoading, onReachBottom, threshold]);
 
   return (
-    <div className={topWrapperClassName}>
+    <div className={wrapperClassName}>
       {children}
       <div
-        className={middleWrapperClassName}
+        className={loaderWrapperClassName}
         style={{ position: "relative" }}
       >
         <div
-          ref={container}
-          className={bottomWrapperClassName}
+          ref={loader}
+          className={loaderClassName}
           style={{
             bottom: "0px",
             height: "100px",
