@@ -5,7 +5,7 @@ export function EndlessScroll({
   isLoading = false,
   hasMore = false,
   children = null,
-  threshold = 0.8,
+  threshold = 0.2,
   topWrapperClassName = "endless-scroll-top-wrapper",
   middleWrapperClassName = "endless-scroll-middle-wrapper",
   bottomWrapperClassName = "endless-scroll-bottom-wrapper",
@@ -43,7 +43,6 @@ export function EndlessScroll({
     <div className={topWrapperClassName}>
       {children}
       <div
-        ref={container}
         className={middleWrapperClassName}
         style={{ position: "relative" }}
       >
@@ -51,10 +50,12 @@ export function EndlessScroll({
           ref={container}
           className={bottomWrapperClassName}
           style={{
+            background:'gray',
             bottom: "0px",
             height: "100px",
+            left: 0,
             position: "absolute",
-            width: "100vw",
+            width: "100%",
           }}
         />
       </div>
