@@ -14,8 +14,8 @@ https://dydokamil.github.io/react-endless-scroll-demo/
       isLoading={isLoading}
       hasMore={hasMore}
     >
-      {elements.map((element) => (
-        <Element>{element}</Element>
+      {items.map((item) => (
+        <div>{item}</div>
       ))}
     </EndlessScroll>
 
