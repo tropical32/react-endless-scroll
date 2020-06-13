@@ -6,6 +6,10 @@
 
 https://dydokamil.github.io/react-endless-scroll-demo/
 
+# npm link
+
+https://www.npmjs.com/package/react-endless-scroll
+
 # Usage
     import EndlessScroll from 'react-endless-scroll'
 
