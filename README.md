@@ -43,30 +43,18 @@ Whether the fetching function has more data to fetch
 
 ---
 
-##### `children: node`
+##### `children: ReactNode`
 
 Components to render
 
 ---
 
-##### `threshold: number = 0.2`
+##### `threshold?: number = 0.0`
 
 Determines, in percent, how much of the bottom 100 pixels of the list has to be "seen" in order to trigger `onReachBottom`
 
 ---
 
-##### `wrapperClassName: string = "endless-scroll-wrapper"`
+##### `className?: string`
 
 class name of the top level wrapper
-
----
-
-##### `loaderWrapperClassName: string = "endless-scroll-loader-wrapper"`
-
-class name of the second level wrapper
-
----
-
-##### `loaderClassName: string = "endless-scroll-loader"`
-
-class name of the third level wrapper
