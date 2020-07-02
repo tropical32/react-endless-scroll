@@ -8,7 +8,7 @@ export type Props = {
   isLoading: boolean;
   onReachBottom: Function;
   threshold?: number | Array<number>;
-}
+};
 
 function EndlessScroll({
   children,
@@ -37,7 +37,11 @@ function EndlessScroll({
       observer.observe(loaderCurrent);
     }
 
-    return () => observer.unobserve(loaderCurrent as Element);
+    return () => {
+      if (loaderCurrent) {
+        observer.unobserve(loaderCurrent);
+      }
+    };
   }, [hasMore, isLoading, onReachBottom, threshold]);
 
   return (
