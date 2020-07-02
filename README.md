@@ -2,6 +2,10 @@
 
     yarn add react-endless-scroll
 
+or
+
+    npm install react-endless-scroll
+
 # Demo
 
 https://dydokamil.github.io/react-endless-scroll-demo/
