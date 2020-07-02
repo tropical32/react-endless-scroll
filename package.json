@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "babel ./src --out-dir ./dist -s inline"
+    "prepublishOnly": "babel ./src --out-dir ./dist -s inline",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,16 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.10.1",
-    "react": "^16.8.0"
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.18.2",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.6"
   },
   "keywords": [
     "endless",
@@ -32,7 +43,8 @@
     "react"
   ],
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "files": [
     "dist/*"
