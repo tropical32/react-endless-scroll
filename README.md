@@ -8,7 +8,7 @@ or
 
 # Demo
 
-https://dydokamil.github.io/react-endless-scroll-demo/
+https://tropical32.github.io/react-endless-scroll-demo/
 
 # npm link
 
